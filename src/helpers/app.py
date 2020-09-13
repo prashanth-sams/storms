@@ -127,7 +127,7 @@ class App(Driver):
         try:
             time.sleep(kwargs['sleep'])
         except KeyError:
-            print('skip sleep')
+            pass
 
     def send_keys(self, locator, text='', **kwargs):
         """

@@ -1,4 +1,4 @@
-EN = {
-    'USERNAME': 'value',
-    'PASSWORD': 'value'
+login = {
+    'USERNAME': 'prashanth.sams',
+    'PASSWORD': 'App@2020'
 }

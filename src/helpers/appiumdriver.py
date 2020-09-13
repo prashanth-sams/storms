@@ -28,10 +28,10 @@ class Driver(unittest.TestCase):
 
     def android(self):
         if self.device == 'emulator':
-            return dict(platformName='Android', platformVersion='', deviceName='PF',
+            return dict(platformName='Android', platformVersion='', deviceName='PF', appWaitActivity="*",
                         app=f'{os.popen("pwd").read().rstrip()}/data/apps/Storms_0_2_5_778_Prod.apk', noReset=True)
         elif self.device == 'real device':
-            return dict(platformName='Android', platformVersion='', deviceName='PF',
+            return dict(platformName='Android', platformVersion='', deviceName='PF', appWaitActivity="*",
                         app=f'{os.popen("pwd").read().rstrip()}/data/apps/Storms_0_2_5_778_Prod.apk', noReset=True)
 
     def tearDown(self):
