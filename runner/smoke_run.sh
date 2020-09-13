@@ -1,0 +1,1 @@
+invoke test --env='prod' --lang='en' --app='android' --device='emulator'

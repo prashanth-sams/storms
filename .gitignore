@@ -1,0 +1,7 @@
+app.log
+.DS_Store
+__pycache__/
+*.pyc
+report/
+.idea/
+.pytest_cache/
