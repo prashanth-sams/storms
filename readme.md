@@ -9,10 +9,9 @@ Install python libraries
 
 | Action         | Command            |
 | -------------- | ---------          |
-| Bash runner    | `bash runner/android/smoke_run.sh` |
+| Bash runner    | `bash runner/smoke_run.sh` |
 | Default        | `python3 -m pytest src/spec/* --app=android` |
-| Rerun failures | `python3 -m pytest src/spec/home_test.py --app=android --reruns 1` |
-| Parallel Test  | `python3 -m pytest src/spec/home_test.py --app=android -v -n2` |
+| Rerun failures | `python3 -m pytest src/spec/login_test.py --app=android --reruns 1` |
 
 ## Test Report
 | Type           | Command            |

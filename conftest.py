@@ -29,8 +29,3 @@ def get_logger():
     ch.setFormatter(formatter)
     logger.addHandler(ch)
     return logger
-
-# @pytest.fixture(scope='session', autouse=True)
-# def session_setup_teardown():
-#     yield
-#     notify_slack()

@@ -3,6 +3,7 @@ import unittest
 import os
 from datetime import datetime
 import pytest
+from pytest_html_reporter import attach
 
 
 class Driver(unittest.TestCase):
@@ -23,19 +24,20 @@ class Driver(unittest.TestCase):
         self.logger.info("Initiating Appium driver")
         self.driver = webdriver.Remote("http://0.0.0.0:4723/wd/hub", desired_caps)
 
-        # set waits
+        # set global wait
         self.driver.implicitly_wait(5)  # waits 5 seconds
 
     def android(self):
         if self.device == 'emulator':
             return dict(platformName='Android', platformVersion='', deviceName='PF', appWaitActivity="*",
-                        app=f'{os.popen("pwd").read().rstrip()}/data/apps/Storms_0_2_5_778_Prod.apk', noReset=True)
+                        app=f'{os.popen("pwd").read().rstrip()}/data/apps/Storms_0_2_5_778_Prod.apk', noReset=False)
         elif self.device == 'real device':
             return dict(platformName='Android', platformVersion='', deviceName='PF', appWaitActivity="*",
-                        app=f'{os.popen("pwd").read().rstrip()}/data/apps/Storms_0_2_5_778_Prod.apk', noReset=True)
+                        app=f'{os.popen("pwd").read().rstrip()}/data/apps/Storms_0_2_5_778_Prod.apk', noReset=False)
 
     def tearDown(self):
         Driver.screenshot_on_failure(self)
+        attach(data=self.driver.get_screenshot_as_png())
         self.driver.quit()
 
     def screenshot_on_failure(self):
