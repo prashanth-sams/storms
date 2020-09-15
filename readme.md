@@ -18,3 +18,7 @@ Install python libraries
 | -------------- | ---------          |
 | HTML Report    | `python3 -m pytest src/spec/*.py --html-report=./report` |
 | JSON Report    | `python3 -m pytest src/spec/*.py --json=report/json/report.json` |
+
+<img src="https://i.imgur.com/7JKvFN7.png">
+
+<img src="https://i.imgur.com/hc0Dsoe.png">
