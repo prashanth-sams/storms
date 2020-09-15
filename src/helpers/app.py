@@ -131,6 +131,10 @@ class App(Driver):
             'elements': lambda x: App.elements(self, locator)[kwargs['index']].click()
         }[keyword_check(kwargs)]('x')
 
+    def wait_until_disappear(self, locator, n=3, **kwargs):
+        wait = WebDriverWait(self.driver, 25)
+        wait.until(EC.invisibility_of_element_located(locator))
+
     @staticmethod
     def sleep(kwargs):
         try:
